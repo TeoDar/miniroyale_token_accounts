@@ -1,0 +1,59 @@
+
+{   
+    "adres": "https://api.solscan.io/account?address=6Xayr7RJes32WYgbjkwXM1Ge2ExLvAX6titHo7sgGFhx&cluster=",
+    "succcess": true,
+    "data": {
+        "lamports": 1461600,
+        "ownerProgram": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "type": "token_account",
+        "rentEpoch": 338,
+        "executable": false,
+        "account": "6Xayr7RJes32WYgbjkwXM1Ge2ExLvAX6titHo7sgGFhx",
+        "tokenInfo": {
+            "name": "Miniverse Hero #10421",
+            "symbol": "MINIROYALE",
+            "decimals": 0,
+            "tokenAuthority": "CFg43GKqyUbnMqVZunxkBpDeDSyNuJ5eX5DG6oJSFkQX",
+            "supply": "1",
+            "type": "nft"
+        },
+        "metadata": {
+            "key": 4,
+            "updateAuthority": "EoYTpE5HuTaXkN2AWDAgGA3JbhtPdeqnUiY9rdG7hMf",
+            "mint": "6Xayr7RJes32WYgbjkwXM1Ge2ExLvAX6titHo7sgGFhx",
+            "data": {
+                "name": "Miniverse Hero #10421",
+                "symbol": "MINIROYALE",
+                "uri": "https://t.mrn.gg/?expires=4807099035&id=fd3a4b57668241b48ab6aad7dc90c209&token=liuV_E_IBXRZ7VFG1SiGiTkRtYeM4FusqmHXMWyL5pk",
+                "sellerFeeBasisPoints": 500,
+                "creators": [
+                    {
+                        "address": "EoYTpE5HuTaXkN2AWDAgGA3JbhtPdeqnUiY9rdG7hMf",
+                        "verified": 1,
+                        "share": 0
+                    },
+                    {
+                        "address": "3qTSZ4pd5mXAL8qE83cm8th9XMjKRuu9UDcGobmyfncx",
+                        "verified": 0,
+                        "share": 100
+                    },
+                    {
+                        "address": "6JAHQ9C7YWtyJhz4rNquEkx91DGPzxyNq9B28m8vumxp",
+                        "verified": 0,
+                        "share": 0
+                    }
+                ]
+            },
+            "primarySaleHappened": 1,
+            "isMutable": 1,
+            "editionNonce": 255,
+            "tokenStandard": 0,
+            "type": "metaplex",
+            "edition": {
+                "type": "MasterEdition",
+                "maxSupply": "0",
+                "supply": "0"
+            }
+        }
+    }
+}

@@ -1,17 +1,23 @@
-# (c) Никулин Федор Николаевич 
+# (c) https://t.me/TeoDar
 
 import requests
 import json
 
-test_account = 'https://solscan.io/account/Epwf6ZXSY55Kwov4bhZmnEhF4BDyqbTUWC7f1oNRCrjt#tokenAccounts'
+# test_account = 'https://solscan.io/account/Epwf6ZXSY55Kwov4bhZmnEhF4BDyqbTUWC7f1oNRCrjt'
 
+# Ввод аккаунта и задание API ссылок
+account = 'Epwf6ZXSY55Kwov4bhZmnEhF4BDyqbTUWC7f1oNRCrjt'
+url_get_all_tokens = f'https://api.solscan.io/account/tokens?address={account}'
+url_get_account = "https://api.solscan.io/account?address="
 
-# account = 'Epwf6ZXSY55Kwov4bhZmnEhF4BDyqbTUWC7f1oNRCrjt'
-# url_items = f'https://api.solscan.io/account/tokens?address={account}&price=1&cluster='
-# response_items = requests.get(url_items)
-# data = json.loads(response_items.text())
-data = json.loads(open(r'miniroyale_token_accounts\src\token-accounts.txt').read())
-first = data['data']
-print(first)
-#item_token = '8s9zgZtAi2x5EbtVavNX3MJcUkXzVZ2NZxcH8P2EVmWX'
-#tokent_data_url = f'https://api.solscan.io/account?address={item_token}&cluster='
+# Получить по API все токены на аккаунте в виде json
+response_all_tokens = requests.get(url_get_all_tokens)
+tokens = json.loads(response_all_tokens.text())
+
+items = {} # Словарь в который будут складываться данные по токенам
+
+for id, token in enumerate(tokens):
+    if 'tokenSymbol' in token:
+        if token['tokenSymbol'] == 'MINIROYALE':
+            response_all_tokens = requests.get(url_get_all_tokens)
+            tokens = json.loads(response_all_tokens.text())

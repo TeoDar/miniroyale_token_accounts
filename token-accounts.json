@@ -1,4 +1,5 @@
 {
+    "adres": "https://api.solscan.io/account/tokens?address=Epwf6ZXSY55Kwov4bhZmnEhF4BDyqbTUWC7f1oNRCrjt&price=1&cluster=",
     "succcess": true,
     "data": [
         {
