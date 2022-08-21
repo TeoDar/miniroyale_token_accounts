@@ -31,8 +31,9 @@ class MiniRoyaleWebApp():
             from pandas.io.excel import ExcelWriter
             from io import BytesIO
             characters, weapons = get_data(self.account)
-            st.session_state.characters = pd.DataFrame(characters)
-            st.session_state.weapons = pd.DataFrame(weapons)
+            print(weapons)
+            st.session_state.characters = pd.DataFrame({k:pd.Series(v) for k,v in characters.items()})
+            st.session_state.weapons = pd.DataFrame({k:pd.Series(v) for k,v in weapons.items()})
             output = BytesIO()
             with ExcelWriter(output) as writer:
                 st.session_state.characters.to_excel(writer, index=False, sheet_name="Персонажи")

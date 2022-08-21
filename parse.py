@@ -61,7 +61,8 @@ def get_data(account):
                     characters['Семейство'].append(metadata.get('collection').get('family')),
                     characters['Сезон'].append(metadata.get('collection').get('name')),
                     for attr in metadata.get('attributes'):
-                        characters[attr['trait_type']] = attr['value']
+                        if not attr['trait_type'] in characters: characters[attr['trait_type']] = []
+                        characters[attr['trait_type']].append(attr['value'])
                 if token_type == 'Weapon':
                     weapons['Продано'].append(''),
                     weapons['Аренда'].append(''),
@@ -71,7 +72,8 @@ def get_data(account):
                     weapons['Семейство'].append(metadata.get('collection').get('family')),
                     weapons['Сезон'].append(metadata.get('collection').get('name')),
                     for attr in metadata.get('attributes'):
-                        weapons[attr['trait_type']] = attr['value']
+                        if not attr['trait_type'] in weapons: weapons[attr['trait_type']] = []
+                        weapons[attr['trait_type']].append(attr['value'])
                 print(token_type, ':   ', metadata.get('name'))
                 if id > 50: break
     return characters, weapons
