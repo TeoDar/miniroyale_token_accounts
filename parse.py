@@ -1,6 +1,5 @@
 # (c) https://t.me/TeoDar
 
-from asyncore import write
 import requests
 import json
 
