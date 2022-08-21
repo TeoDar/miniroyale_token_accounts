@@ -6,11 +6,9 @@ from parse import get_data, _get_sample_characters, _get_sample_weapons
 class MiniRoyaleWebApp():
     def __init__(self) -> None:
         if 'characters' not in st.session_state:
-            st.session_state.characters = pd.DataFrame(_get_sample_characters())
+            st.session_state.characters = pd.DataFrame()
         if 'weapons' not in st.session_state:
-            st.session_state.weapons = pd.DataFrame(_get_sample_weapons())
-        # if 'download' not in st.session_state:
-        #     st.session_state.download = self.right_column.download_button(label='Скачать', data='')
+            st.session_state.weapons = pd.DataFrame()
             
     def window(self):
         st.write('Данный сайт предназначен для получения полной сводки всех имеющихся у вас токенов в MINI ROYALE.')
@@ -20,9 +18,8 @@ class MiniRoyaleWebApp():
         self.left_column, self.right_column = st.columns(2)
         #Колонка с кнопками
         self.left_column.button('Выгрузить', on_click=self.get_tokens)
-        
         st.write('Персонажи:')
-        st.write(st.session_state.characters)
+        st.write(st.session_state.characters)        
         st.write('Оружие:')
         st.write(st.session_state.weapons)
         
@@ -31,7 +28,6 @@ class MiniRoyaleWebApp():
             from pandas.io.excel import ExcelWriter
             from io import BytesIO
             characters, weapons = get_data(self.account)
-            print(weapons)
             st.session_state.characters = pd.DataFrame({k:pd.Series(v) for k,v in characters.items()})
             st.session_state.weapons = pd.DataFrame({k:pd.Series(v) for k,v in weapons.items()})
             output = BytesIO()
