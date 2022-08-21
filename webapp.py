@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import openpyxl
 from parse import get_data, _get_sample_characters, _get_sample_weapons
  
 
