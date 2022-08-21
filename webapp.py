@@ -14,11 +14,16 @@ class MiniRoyaleWebApp():
         self.account = left_column.text_input(label='Введите токен вашего аккаунта на Solscan:')
         #Колонка с кнопками
         with right_column:
-            st.button('Выгрузить', on_click=self.get_tokens)
-            st.button('Скачать CSV', disabled=True)
+            self.btn_get_data = st.button('Выгрузить', on_click=self.get_tokens)
+            self.btn_download_data = st.button('Скачать CSV', disabled=True)
 
     def get_tokens(self):
-        st.dataframe(pd.DataFrame(get_data(self.account)))
+        if self.account:
+            st.dataframe(pd.DataFrame(get_data(self.account)))
+        else:
+            pass
+        #self.btn_download_data.
+        
 
 if __name__=='__main__':
     app = MiniRoyaleWebApp()
