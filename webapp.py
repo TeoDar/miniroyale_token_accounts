@@ -9,8 +9,8 @@ class MiniRoyaleWebApp():
             st.session_state.characters = pd.DataFrame(_get_sample_characters())
         if 'weapons' not in st.session_state:
             st.session_state.weapons = pd.DataFrame(_get_sample_weapons())
-        if 'download' not in st.session_state:
-            st.session_state.download = self.right_column.download_button(label='Скачать', data='')
+        # if 'download' not in st.session_state:
+        #     st.session_state.download = self.right_column.download_button(label='Скачать', data='')
             
     def window(self):
         st.write('Данный сайт предназначен для получения полной сводки всех имеющихся у вас токенов в MINI ROYALE.')
@@ -38,7 +38,7 @@ class MiniRoyaleWebApp():
                 st.session_state.characters.to_excel(writer, index=False, sheet_name="Персонажи")
                 st.session_state.weapons.to_excel(writer, index=False, sheet_name="Оружие")
             xls = output.getvalue()
-            st.session_state.download = self.right_column.download_button(label='Скачать',data=xls, file_name='tokens.xlsx', mime='text/xls')
+            self.right_column.download_button(label='Скачать',data=xls, file_name='tokens.xlsx', mime='text/xls')
 
 if __name__=='__main__':
     app = MiniRoyaleWebApp()
