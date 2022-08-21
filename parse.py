@@ -73,7 +73,6 @@ def get_data(account):
                     for attr in metadata.get('attributes'):
                         weapons[attr['trait_type']] = attr['value']
                 print(token_type, ':   ', metadata.get('name'))
-                if id > 10: break
     return characters, weapons
         
 if __name__=='__main__':
